@@ -10,8 +10,8 @@ public class helloController {
 //        model.addAttribute("name",name);
 //        return "index";
 //    }
-    @GetMapping("/")
-    public  String index(){
-        return "index";
-    }
+//    @GetMapping("/")
+//    public  String index(){
+//        return "index";
+//    }
 }

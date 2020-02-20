@@ -6,10 +6,8 @@ import com.shiyukirito.dto.GithubUserDTO;
 import okhttp3.*;
 import org.springframework.stereotype.Component;
 
-import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.Proxy;
-import java.util.concurrent.TimeUnit;
 
 @Component
 public class GithubProvider {
@@ -18,9 +16,8 @@ public class GithubProvider {
          OkHttpClient client = new OkHttpClient.Builder()
                  .proxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress("127.0.0.1", 1080)))
                  .build();
-         RequestBody body = RequestBody.create(mediaType, JSON.toJSONString(accessTokenDTO));
 
-        System.out.println(JSON.toJSONString(accessTokenDTO));
+//        System.out.println(JSON.toJSONString(accessTokenDTO));
          Request request = new Request.Builder().url("https://github.com/login/oauth/access_token?client_id="+accessTokenDTO.getClient_id()+"&client_secret="+accessTokenDTO.getClient_secret()
                  +"&code="+accessTokenDTO.getCode()+"&redirect_uri=http://localhost:8887/callback&state=1")
                 .build();
@@ -48,7 +45,6 @@ public class GithubProvider {
             String str = response.body().string();
             System.out.println(str);
             GithubUserDTO user = JSON.parseObject(str,GithubUserDTO.class);
-            System.out.println("user:"+user.getLogin()+user.getId()+user.getDio());
             return user;
         }
         catch (Exception e){

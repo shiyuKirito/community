@@ -7,14 +7,16 @@ public class GithubUserDTO {
         private  long id;
         private  String dio;
 
-    public String getLogin() {
+    public String getName() {
         return name;
     }
 
-    public void setLogin(String name) {
-        this.name = name;
-    }
+//    public void setName(String name) {
+//        this.name = name;
+//    }
 
+    public void setLogin(String name){this.name = name;} //github 返回的JSON中Login对应name;
+    public String getLogin(){return  name;}
     public long getId() {
         return id;
     }

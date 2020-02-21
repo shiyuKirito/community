@@ -19,17 +19,17 @@ public class IndexColler {
     private UserMapper userMapper;
 
     @GetMapping("/")
-    public  String index(HttpServletRequest request){
-        if(request.getCookies()== null){
+    public String index(HttpServletRequest request) {
+        if (request.getCookies() == null) {
             return "index";
         }
-        Cookie[] cookies= request.getCookies();
-        for(Cookie cookie: cookies){
-            if(cookie.getName().equals("token")){
+        Cookie[] cookies = request.getCookies();
+        for (Cookie cookie : cookies) {
+            if (cookie.getName().equals("token")) {
                 String token = cookie.getValue();
                 User user = userMapper.FindbyToken(token);
-                if(user!=null){
-                    request.getSession().setAttribute("user",user);
+                if (user != null) {
+                    request.getSession().setAttribute("user", user);
                 }
                 break;
             }

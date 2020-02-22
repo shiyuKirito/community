@@ -6,6 +6,16 @@ public class GithubUserDTO {
         private  String name;
         private  long id;
         private  String dio;
+        private  String avatar_url;
+
+    public String getAvatar_url() {
+        return avatar_url;
+    }
+
+    public void setAvatar_url(String avatart_url) {
+        this.avatar_url = avatart_url;
+    }
+
 
     public String getName() {
         return name;

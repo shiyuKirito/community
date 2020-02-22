@@ -1,6 +1,5 @@
 package com.shiyukirito.dto;
 
-import com.sun.xml.internal.ws.api.ha.StickyFeature;
 
 public class AccessTokenDTO {
     private String client_id;

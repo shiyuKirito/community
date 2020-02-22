@@ -20,7 +20,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">社区</a>
+            <a class="navbar-brand" href="/">社区</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -73,10 +73,10 @@
                         <label for="title">添加标签</label>
                         <input type="text" class="form-control" th:value="${tag}"  id="tag" name="tag" placeholder="输入标签以（逗号,)分割" >
                     </div>
-            </div>
             <span class="alert alert-danger" th:if="${error != null}" th:text="${error} "></span>
             <button type="submit" class="btn btn-success btn-publish">发布</button>
             </form>
+            </div>
         </div>
         <div class="col-lg-3 col-md-12 col-xs-12 col-sm-12">
             <h3>问题发起指南</h3><br>
@@ -85,5 +85,6 @@
             问题详情：详细解释问题，可以附带截图展示
         </div>
     </div>
+</div>
 </body>
 </html>

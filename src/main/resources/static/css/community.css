@@ -5,8 +5,17 @@
 body {
     background-color: #efefef;
 }
+.media-object{
+    width: 48px;
+    height: 48px;
+}
 
 .btn-publish {
     float: right;
     margin-bottom: 15px;
+}
+.text-desc{
+    font-size: 12px;
+    font-weight: normal;
+    color: #999;
 }

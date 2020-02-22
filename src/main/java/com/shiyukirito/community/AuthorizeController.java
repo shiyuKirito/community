@@ -36,7 +36,8 @@ public class AuthorizeController {
     @GetMapping("/callback")
     public String callback(@RequestParam(name="code") String code,
                            @RequestParam(name="state") String state,
-                           HttpServletResponse response)   {
+                           HttpServletResponse response,
+                           HttpServletRequest request)   {
         AccessTokenDTO accessTokenDTO = new AccessTokenDTO() ;
         accessTokenDTO.setCode(code);
         accessTokenDTO.setState(state);
@@ -53,11 +54,12 @@ public class AuthorizeController {
             user.setName(String.valueOf(githubUser.getLogin()));
             user.setGmtCreate(System.currentTimeMillis());
             user.setGmtModified(user.getGmtCreate());
+            user.setAvatarUrl(String.valueOf(githubUser.getAvatar_url()));
             userMapper.insert(user);
             //写入cookie
             response.addCookie(new Cookie("token",token));
             //登录成功 写入cookie和session
-//            request.getSession().setAttribute("user", githubUser);
+            request.getSession().setAttribute("user", githubUser);
 
             return "redirect:/";
             //重定向到index页面中

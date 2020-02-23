@@ -1,5 +1,6 @@
 package com.shiyukirito.Serivice;
 
+import com.shiyukirito.dto.PaginationDTO;
 import com.shiyukirito.dto.QuestionDTO;
 import com.shiyukirito.mapper.QuestionMapper;
 import com.shiyukirito.mapper.UserMapper;
@@ -21,16 +22,27 @@ public class QuesstionService {
     @Autowired
     UserMapper userMapper;
 
-    public List<QuestionDTO> list() {
-        List<Question> questions = questionMapper.list();
-        List<QuestionDTO> QuestionDTOList = new ArrayList<>();
+    public PaginationDTO list(Integer page, Integer size) {
+        List<QuestionDTO> questionDTOList = new ArrayList<>();
+        Integer totalCount = questionMapper.count();
+        PaginationDTO paginationDTO = new PaginationDTO();
+        paginationDTO.sePagination(totalCount,page,size);
+        if(page<1){
+            page = 1;
+        }
+        if(page>paginationDTO.getTotalPage()){
+            page=paginationDTO.getTotalPage();
+        }
+        Integer offset = (page-1)*size;
+        List<Question> questions = questionMapper.list(offset,size);
         for(Question question : questions){
             User user = userMapper.findByID(question.getCreator());
             QuestionDTO questionDTO = new QuestionDTO();
             BeanUtils.copyProperties(question,questionDTO);
             questionDTO.setUser(user);
-            QuestionDTOList.add(questionDTO);
+            questionDTOList.add(questionDTO);
         }
-        return QuestionDTOList;
+        paginationDTO.setQuestions(questionDTOList);
+        return paginationDTO;
     }
 }

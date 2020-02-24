@@ -36,6 +36,7 @@ create  table  question(
 ###点击[commit](https://github.com/shiyuKirito/community/commits/master)可以查看我的commit记录查看进度
 
 ###论坛界面效果展示  （未完成状态）展示部分页面
+
 主界面：![图片](/ReadMeImg/1.png)
 
 发布问题页面：![图片](/ReadMeImg/2.png)

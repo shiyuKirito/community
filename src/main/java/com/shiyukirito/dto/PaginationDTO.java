@@ -30,11 +30,17 @@ public class PaginationDTO {
         for(int i=1;i<=3;i++){
             if(page-i>0){
                 pages.add(0,page-i);
+                if(page-i==1){
+                    showFistpage = false;
+                }
             } else{
                 showFistpage = false;
             }
             if(page+i<=totalPage) {
                 pages.add(page + i);
+                if(page+i==totalPage){
+                    showEndpage = false;
+                }
             } else{
                 showEndpage = false;
             }

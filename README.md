@@ -1,10 +1,6 @@
 # shiyukirito communtiy
 
-<<<<<<< HEAD
-##涉及技术及相关文档  
-=======
 ##涉及技术及相关文档   
->>>>>>> ecf360b0b38dcb5fbe86e40a46598bab123f6411
 [bootstrap](https://v3.bootcss.com/)  
 [mybatis](http://mybatis.org/spring/zh/index.html)  
 [thymeleaf](https://www.thymeleaf.org/documentation.html)  
@@ -12,7 +8,7 @@
 ## [shiyukirito博客](http://39.105.143.220/)
 ## [shiyukirito博客](https://blog.csdn.net/kirito9943)（CSDN）
 
-###MySQL数据库脚本
+###MySQL数据库脚本 
 ```sql
 create  table  user(
     id int primary key auto_increment,

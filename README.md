@@ -1,6 +1,6 @@
 # shiyukirito communtiy
 
-##涉及技术及相关文档
+##涉及技术及相关文档  
 [bootstrap](https://v3.bootcss.com/)  
 [mybatis](http://mybatis.org/spring/zh/index.html)  
 [thymeleaf](https://www.thymeleaf.org/documentation.html)  

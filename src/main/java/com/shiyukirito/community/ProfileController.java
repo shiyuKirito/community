@@ -31,17 +31,7 @@ public class ProfileController {
         if (request.getCookies() == null) {
             return "index";
         }
-        User user = null;
-        for (Cookie cookie : cookies) {
-            if (cookie.getName().equals("token")) {
-                String token = cookie.getValue();
-                user = userMapper.FindbyToken(token);
-                if (user != null) {
-                    request.getSession().setAttribute("user", user);
-                }
-                break;
-            }
-        }
+        User user = (User)request.getSession().getAttribute("user");
         if(user==null){
             return "redirect:/";
         }

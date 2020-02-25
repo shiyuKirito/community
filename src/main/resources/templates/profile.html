@@ -48,8 +48,8 @@
                         <li th:each="page: ${pagination.pages}" th:class="${pagination.page == page}? 'active':'' ">
                             <a th:href="@{'/profile/'+${section}(page=${page})}" th:text="${page}"></a>
                         </li>
-                        <li th:if="${pagination.getShowPrevious()}">
-                            <a th:href="@{'/profile/'+${section}(page=${pagination.page-1})}" aria-label="Previous">
+                        <li th:if="${pagination.getShowNext()}">
+                            <a th:href="@{'/profile/'+${section}(page=${pagination.page+1})}" aria-label="Previous">
                                 <span aria-hidden="true">下一页</span>
                             </a>
                         </li>

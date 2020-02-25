@@ -1,6 +1,10 @@
 # shiyukirito communtiy
 
+<<<<<<< HEAD
 ##涉及技术及相关文档  
+=======
+##涉及技术及相关文档   
+>>>>>>> ecf360b0b38dcb5fbe86e40a46598bab123f6411
 [bootstrap](https://v3.bootcss.com/)  
 [mybatis](http://mybatis.org/spring/zh/index.html)  
 [thymeleaf](https://www.thymeleaf.org/documentation.html)  
